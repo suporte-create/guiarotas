@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Via Urbana | Guia de Rotas de Entradas</title>
+  <meta name="description"
+    content="Guia interativo de rotas de entradas Via Urbana. Acesse vídeos e mídias das rotas diretamente pelo navegador.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Background Animated Blur Orbs -->
+  <div class="bg-blur-container">
+    <div class="blur-orb orb-1"></div>
+    <div class="blur-orb orb-2"></div>
+    <div class="blur-orb orb-3"></div>
+  </div>
+
+  <!-- Main App Wrapper -->
+  <div class="app-container">
+
+    <!-- Top Navigation / Header -->
+    <header class="navbar">
+      <div class="brand-container">
+        <div class="logo-wrapper">
+          <img src="assets/optimized/logo.png" alt="ViaUrbana Logo" class="brand-logo"
+            onerror="this.src='assets/img_1_3_X14.png'">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Via Urbana</span>
+          <span class="brand-subtitle">Mobilidade & Rotas</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Dark / Light Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema escuro/claro"
+          title="Alternar Tema">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-badge">
+        <i class="fa-solid fa-route"></i> Guia Oficial de Rotas
+      </div>
+      <h1 class="hero-title">Rotas de Entradas e Recolhimentos Via Urbana</h1>
+      <p class="hero-description">
+        Selecione uma rota abaixo para visualizar o trajeto correspondente em vídeo.
+      </p>
+      <!-- Tabs Navigation -->
+      <div class="tabs-container">
+        <button class="tab-btn active" data-tab="entrada">Rotas de Entrada</button>
+        <button class="tab-btn" data-tab="recolhimento">Rotas de Recolhimento</button>
+      </div>
+
+      <!-- Search & Filters Container -->
+      <div class="controls-wrapper">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="search-input" placeholder="Buscar rota (ex: Caça e Pesca, 065, 855...)"
+            autocomplete="off">
+          <button id="clear-search" class="clear-search-btn" aria-label="Limpar busca">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+    </section>
+
+    <!-- Main Content Area: Cards View vs Interactive Banner View -->
+    <main class="content-container">
+
+      <!-- VIEW 1: Cards Grid -->
+      <section id="cards-view" class="cards-grid-section">
+        <div class="cards-grid" id="routes-grid">
+          <!-- Cards will be populated dynamically via JavaScript -->
+        </div>
+
+        <!-- No Results State -->
+        <div id="no-results" class="no-results-container hidden">
+          <div class="no-results-icon">
+            <i class="fa-solid fa-route-slash"></i>
+          </div>
+          <h3>Nenhuma entrada encontrada</h3>
+          <p>Tente buscar por outro nome de rota ou número de linha.</p>
+        </div>
+      </section>
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2026 ViaUrbana - Guia Digital de Rotas de Entradas</p>
+        <p class="footer-small">Links direcionados para mídias de vídeo.</p>
+      </div>
+    </footer>
+
+  </div>
+
+
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- JavaScript Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
