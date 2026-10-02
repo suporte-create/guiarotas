@@ -228,6 +228,13 @@ themeToggleBtn.addEventListener('click', () => {
 
 // Initial Setup
 document.addEventListener('DOMContentLoaded', () => {
+  // Ordenar as rotas alfabeticamente ignorando a palavra inicial (Entrada/Recolhimento)
+  ROUTES_DATA.sort((a, b) => {
+    const nameA = a.title.replace(/^(ENTRADA|RECOLHIMENTO)\s+/i, '').trim();
+    const nameB = b.title.replace(/^(ENTRADA|RECOLHIMENTO)\s+/i, '').trim();
+    return nameA.localeCompare(nameB, 'pt-BR');
+  });
+
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       tabBtns.forEach(b => b.classList.remove('active'));
